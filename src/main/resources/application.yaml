@@ -1,0 +1,12 @@
+
+spring:
+  ai:
+    mcp:
+      client:
+        name: mcp-chat
+        type: SYNC
+        sse:
+          connections:
+            mcp-dbs-server:
+              url: http://localhost:9030
+            

@@ -26,14 +26,17 @@ repositories {
 extra["springAiVersion"] = "1.0.0"
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.ai:spring-ai-starter-mcp-client")
+	implementation("org.springframework.boot", "spring-boot-starter-web")
+	implementation("org.springframework.ai", "spring-ai-starter-mcp-client")
+	implementation("org.springframework.ai", "spring-ai-starter-model-ollama")
 
-	compileOnly("org.projectlombok:lombok")
-	annotationProcessor("org.projectlombok:lombok")
+	implementation("org.apache.commons", "commons-lang3")
+
+	compileOnly("org.projectlombok", "lombok")
+	annotationProcessor("org.projectlombok", "lombok")
 	
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	testImplementation("org.springframework.boot", "spring-boot-starter-test")
+	testRuntimeOnly("org.junit.platform", "junit-platform-launcher")
 }
 
 dependencyManagement {
@@ -44,4 +47,8 @@ dependencyManagement {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.bootRun {
+    args("--spring.profiles.active=local")
 }

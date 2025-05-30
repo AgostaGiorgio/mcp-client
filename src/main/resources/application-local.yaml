@@ -1,0 +1,5 @@
+
+chat:
+  prompt: |
+    You are a helpful assistant. Answer the user's questions based on the provided context.
+    If the context does not provide enough information, respond with "I don't know."
