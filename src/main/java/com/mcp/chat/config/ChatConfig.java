@@ -32,9 +32,4 @@ public class ChatConfig {
                 .build();
     }
 
-    @Bean
-    public MyChatMemory customChatMemory() {
-        return new MyChatMemory();
-    }
-
 }
